@@ -9,7 +9,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class soldierServiceImp implements SoldierService {
     @Autowired
@@ -31,9 +34,16 @@ public class soldierServiceImp implements SoldierService {
     }
 
     @Override
+    @Transactional
+    public Optional <Soldier> findOneSoldier(Long id) {
+        return reposirory.findById(id);
+    }
+
+    @Override
     public List<Soldier> getAllSoldier() {
         return reposirory.findAll() ;
     }
+
 
     @Override
     public void deleteSoldier(Long id) {

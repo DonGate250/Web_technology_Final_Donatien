@@ -5,9 +5,8 @@
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <title>#home</title>
-      <link rel="icon" href="/soldierPage/armyLogo1.jpg" type="image/x-icon " />
-      <link rel="icon" type="image/x-icon" href="/soldierPage/armyLogo1.jpg" />
-      <link rel="stylesheet" href="/soldierPage/stylehome.css" />
+      <link rel="icon" href="/armyLogo1.jpg" type="image/x-icon " />
+      <link rel="icon" type="image/x-icon" href="/armyLogo1.jpg" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link rel="icon" href="images/logo.jpeg" type="image/x-icon" />
@@ -161,6 +160,36 @@
           line-height: 22px;
           padding: 10px;
         }
+        .text-box{
+          width: 90%;
+          color: #00226B;
+          position:absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,0%);
+          text-align: center;
+          font-weight: bold;
+        }
+
+        .btn1{
+          display: inline-block;
+          text-decoration: none;
+          color: #fff;
+          border: 1px solid #000000;
+          border-radius: 10px;
+          padding: 12px 34px;
+          margin-top:300px ;
+          font-size: 14px;
+          background: #4b5320;
+          position: relative;
+          cursor:pointer;
+
+        }
+        .btn1:hover{
+          background-color: #8B4513;
+
+        }
+
 
         @media screen and(max-width:800px) {
           .header,
@@ -169,7 +198,7 @@
           }
         }
         body {
-          background-image: url("/militaryHomepage.jpg");
+          background-image: url("/1920px-Members_of_the_Rwanda_Defense_Force_move_into_formation_after_arriving_in_Bangui,_Central_African_RepublicMULITARY.jpg");
         }
       </style>
     </head>
@@ -183,13 +212,16 @@
               <div class="nav-links" id="nav-links">
                 <ul>
                   <li><a th:href="@{/}">Home</a></li>
+                  <li><a th:href="@{/info}">Contact</a></li>
                   <li><a th:href="@{/login}">Login </a></li>
                   <li><a th:href="@{/registration}">SignUp </a></li>
                   <li><a th:href="@{/logout}">Logout </a></li>
                 </ul>
               </div>
             </nav>
-
+            <div class="text-box">
+              <a th:href="@{/contacts}" class="btn1">For more information vist us</a>
+              </div>
             <div id="display"></div>
           </section>
         </div>

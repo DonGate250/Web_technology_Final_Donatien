@@ -9,7 +9,8 @@ import java.util.Date;
 public class Soldier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long regNo;
+    private long id;
+    private String regNo;
     private String nationalId;
     private String firstName;
     private String lastName;
@@ -23,7 +24,7 @@ public class Soldier {
     public Soldier() {
     }
 
-    public Soldier(Long regNo,String nationality, String firstName, String lastName, String rank, Date dob, String gender, String email ,String nationalId) {
+    public Soldier(String regNo,String nationality,Long id, String firstName, String lastName, String rank, Date dob, String gender, String email ,String nationalId) {
         this.regNo = regNo;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -33,14 +34,15 @@ public class Soldier {
         this.gender = gender;
         this.nationalId=nationalId;
         this.nationalId=nationalId;
+        this.id=id;
 
     }
 
-    public Long getRegNo() {
+    public String getRegNo() {
         return regNo;
     }
 
-    public void setRegNo(Long regNo) {
+    public void setRegNo(String regNo) {
         this.regNo = regNo;
     }
 
@@ -108,6 +110,14 @@ public class Soldier {
 
     public void setNationality(String nationality) {
         Nationality = nationality;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }
 
